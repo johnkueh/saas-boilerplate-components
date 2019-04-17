@@ -28,12 +28,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@storybook/react": "^5.0.9",
+    "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.0.9",
     "@storybook/addon-knobs": "^5.0.3",
     "@storybook/addon-links": "^5.0.9",
+    "@storybook/addon-storysource": "^5.0.9",
     "@storybook/addons": "^5.0.9",
-    "@babel/core": "^7.4.3",
+    "@storybook/react": "^5.0.9",
     "babel-loader": "^8.0.5"
   }
 }

@@ -1,0 +1,6 @@
+.table {
+}
+.table thead th {
+  border-bottom: none;
+  @extend .bg-light;
+}
