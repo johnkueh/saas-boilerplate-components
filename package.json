@@ -13,7 +13,10 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "deploy-storybook": "storybook-to-ghpages -- --out=.out"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -23,5 +26,14 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@storybook/react": "^5.0.9",
+    "@storybook/addon-actions": "^5.0.9",
+    "@storybook/addon-knobs": "^5.0.3",
+    "@storybook/addon-links": "^5.0.9",
+    "@storybook/addons": "^5.0.9",
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5"
+  }
 }
