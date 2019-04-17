@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SettingsLayout from '../components/layouts/settings';
-import PaymentHistory from '../components/billing/payment-history';
+import SettingsLayout from '../../components/layouts/settings';
+import PaymentHistory from './payment-history';
 
-const stories = storiesOf('Billing', module);
+const stories = storiesOf('Components|Billing/PaymentHistory', module);
 
-stories.add('Payment history', () => (
+stories.add('with invoices', () => (
   <SettingsLayout>
     <PaymentHistory
       invoices={[
