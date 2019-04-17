@@ -4,17 +4,9 @@ import { Formik } from 'formik';
 import Alert from '../alert';
 import AuthLayout from '../layouts/auth';
 
-const LogIn = ({ errors }) => (
+const LogIn = ({ errors, onSubmit }) => (
   <AuthLayout>
-    <Formik
-      initialValues={{ email: '', password: '' }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-      }}
-    >
+    <Formik initialValues={{ email: '', password: '' }} onSubmit={onSubmit}>
       {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
         <form onSubmit={handleSubmit} className="mt-3">
           {errors && <Alert type="warning" messages={errors.map(error => error.message)} />}
