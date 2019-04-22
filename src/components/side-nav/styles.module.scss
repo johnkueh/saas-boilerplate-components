@@ -1,0 +1,17 @@
+.wrapper {
+  width: 250px;
+  min-height: 100vh;
+  padding: 2rem;
+  border-right: 1px solid #efefef;
+}
+
+.links {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: #888;
+  margin: 2rem 0 0.5rem;
+}

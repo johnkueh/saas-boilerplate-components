@@ -4,6 +4,7 @@ import LogIn from './components/log-in';
 import SignUp from './components/sign-up';
 import RequestResetPassword from './components/request-reset-password';
 import ResetPassword from './components/reset-password';
+import Dashboard from './components/dashboard';
 
 const App = () => (
   <Router>
@@ -12,6 +13,7 @@ const App = () => (
     <Route path="/sign-up" exact component={SignUp} />
     <Route path="/forgot-password" exact component={RequestResetPassword} />
     <Route path="/reset-password" exact component={ResetPassword} />
+    <Route path="/dashboard" exact component={Dashboard} />
   </Router>
 );
 
