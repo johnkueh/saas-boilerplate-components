@@ -6,7 +6,7 @@
 }
 
 .links {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -14,4 +14,12 @@
 .title {
   color: #888;
   margin: 2rem 0 0.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 1rem;
+  }
 }
