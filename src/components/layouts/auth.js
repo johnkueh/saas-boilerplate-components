@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/index.scss';
 
 const AuthLayout = ({ children }) => (
@@ -7,7 +8,9 @@ const AuthLayout = ({ children }) => (
       <div className="col-md-4 offset-md-4">
         <div className="card border-0 p-4 bg-light">
           <div className="my-3 text-center">
-            <img alt="logo" height="40" src="full-logo-black.svg" />
+            <Link to="/">
+              <img alt="logo" height="40" src="full-logo-black.svg" />
+            </Link>
           </div>
           {children}
         </div>

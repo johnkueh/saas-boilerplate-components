@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AuthLayout from '../layouts/auth';
 
 const RequestResetPassword = props => (
@@ -12,7 +13,7 @@ const RequestResetPassword = props => (
         </button>
       </div>
       <div className="mt-3">
-        Dont have an account? <a href="/sign-up">Sign up</a>
+        Dont have an account? <Link to="/sign-up">Sign up</Link>
       </div>
     </form>
   </AuthLayout>

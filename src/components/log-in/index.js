@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
+import { Link } from 'react-router-dom';
 import Alert from '../alert';
 import AuthLayout from '../layouts/auth';
 
@@ -35,7 +36,12 @@ const LogIn = ({ errors, onSubmit }) => (
             </button>
           </div>
           <div className="mt-3">
-            Dont have an account? <a href="/sign-up">Sign up</a>
+            <div>
+              Dont have an account? <Link to="/sign-up">Sign up</Link>
+            </div>
+            <div className="mt-1">
+              <Link to="/forgot-password">Forgot your password?</Link>
+            </div>
           </div>
         </form>
       )}
