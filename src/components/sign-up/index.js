@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import Alert from '../alert';
-import AuthLayout from '../layouts/auth';
+import Layout from '../layouts/auth';
 
 const SignUp = ({ errors, onSubmit }) => (
-  <AuthLayout>
+  <Layout>
     <Formik
       initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
       onSubmit={onSubmit}
@@ -62,7 +62,7 @@ const SignUp = ({ errors, onSubmit }) => (
         </form>
       )}
     </Formik>
-  </AuthLayout>
+  </Layout>
 );
 
 export default SignUp;

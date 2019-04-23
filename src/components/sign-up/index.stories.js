@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SettingsLayout from '../../components/layouts/settings';
+import Layout from '../../components/layouts/settings';
 import SignUp from './index';
 
 const stories = storiesOf('Components|User/SignUp', module);
@@ -13,13 +13,13 @@ const onSubmit = (values, { setSubmitting }) => {
 };
 
 stories.add('Default', () => (
-  <SettingsLayout>
+  <Layout>
     <SignUp onSubmit={onSubmit} />
-  </SettingsLayout>
+  </Layout>
 ));
 
 stories.add('with Errors', () => (
-  <SettingsLayout>
+  <Layout>
     <SignUp
       onSubmit={onSubmit}
       errors={[
@@ -29,5 +29,5 @@ stories.add('with Errors', () => (
         { message: 'Email is not an email' }
       ]}
     />
-  </SettingsLayout>
+  </Layout>
 ));

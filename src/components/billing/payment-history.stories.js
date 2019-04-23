@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SettingsLayout from '../../components/layouts/settings';
+import Layout from '../../components/layouts/settings';
 import PaymentHistory from './payment-history';
 
 const stories = storiesOf('Components|Billing/PaymentHistory', module);
 
 stories.add('with invoices', () => (
-  <SettingsLayout>
+  <Layout>
     <PaymentHistory
       invoices={[
         {
@@ -38,5 +38,5 @@ stories.add('with invoices', () => (
         }
       ]}
     />
-  </SettingsLayout>
+  </Layout>
 ));
