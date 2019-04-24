@@ -16,10 +16,9 @@ const Account = () => (
           <Route component={ChoosePlanLink} />
         </Switch>
         <h5 className="pt-4 pb-2">Payment method</h5>
-        <div className="mb-2">XXXX-XXXX-XXXX-3234</div>
         <Switch>
           <Route path="/billing/payment" component={UpdatePayment} />
-          <Route component={UpdatePaymentLink} />
+          <Route component={PaymentMethod} />
         </Switch>
         <h5 className="pt-4 pb-2">Payment history</h5>
         <PaymentHistory invoices={mockInvoices} />
@@ -34,10 +33,13 @@ const ChoosePlanLink = () => (
   </Link>
 );
 
-const UpdatePaymentLink = () => (
-  <Link className="d-block" to="/billing/payment">
-    Update
-  </Link>
+const PaymentMethod = () => (
+  <>
+    <div className="mb-2">XXXX-XXXX-XXXX-3234</div>
+    <Link className="d-block" to="/billing/payment">
+      Update
+    </Link>
+  </>
 );
 
 const mockInvoices = [

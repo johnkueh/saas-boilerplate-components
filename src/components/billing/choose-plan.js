@@ -31,7 +31,7 @@ const ChoosePlan = ({ history }) => (
       ))}
     </div>
     <div className="mt-4">
-      <Button variant="link" onClick={onClose.bind(this, history)}>
+      <Button className="pl-0 mr-2" variant="link" onClick={onClose.bind(this, history)}>
         Cancel
       </Button>
       <Button onClick={onClose.bind(this, history)}>Confirm</Button>
