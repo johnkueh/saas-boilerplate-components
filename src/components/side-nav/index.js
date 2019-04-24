@@ -10,7 +10,7 @@ const SideNav = props => (
       <div className={styles.brand}>
         <div className="mr-1">
           <Link to="/dashboard">
-            <img alt="logo" height="35" src="logo-square.svg" />
+            <img alt="logo" height="35" src="/logo-square.svg" />
           </Link>
         </div>
         <DropdownButton

@@ -1,14 +1,18 @@
 import React from 'react';
 import PaymentHistory from '../components/billing/payment-history';
+import PaymentMethod from '../components/billing/payment-method';
+import SubscriptionPlans from '../components/billing/subscription-plans';
 import Layout from '../layouts/with-side-nav';
 
 const Account = () => (
   <Layout title="Billing">
-    <div>[CREDIT_CARD_FORM_TO_COLLECT_PAYMENT]</div>
-    <div className="py-3" />
-    <h4 className="pb-3">Payment history</h4>
     <div className="row">
       <div className="col-md-6">
+        <h5 className="pt-2 pb-2">Subscription plan</h5>
+        <SubscriptionPlans />
+        <h5 className="pt-4 pb-2">Payment method</h5>
+        <PaymentMethod />
+        <h5 className="pt-4 pb-2">Payment history</h5>
         <PaymentHistory invoices={mockInvoices} />
       </div>
     </div>
