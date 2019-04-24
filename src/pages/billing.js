@@ -1,7 +1,8 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import PaymentHistory from '../components/billing/payment-history';
-import PaymentMethod from '../components/billing/payment-method';
-import SubscriptionPlans from '../components/billing/subscription-plans';
+import ChoosePlan from '../components/billing/choose-plan';
+import UpdatePayment from '../components/billing/update-payment';
 import Layout from '../layouts/with-side-nav';
 
 const Account = () => (
@@ -9,14 +10,34 @@ const Account = () => (
     <div className="row">
       <div className="col-md-6">
         <h5 className="pt-2 pb-2">Subscription plan</h5>
-        <SubscriptionPlans />
+        <div className="mb-2">Developer - $30/month</div>
+        <Switch>
+          <Route path="/billing/plans" component={ChoosePlan} />
+          <Route component={ChoosePlanLink} />
+        </Switch>
         <h5 className="pt-4 pb-2">Payment method</h5>
-        <PaymentMethod />
+        <div className="mb-2">XXXX-XXXX-XXXX-3234</div>
+        <Switch>
+          <Route path="/billing/payment" component={UpdatePayment} />
+          <Route component={UpdatePaymentLink} />
+        </Switch>
         <h5 className="pt-4 pb-2">Payment history</h5>
         <PaymentHistory invoices={mockInvoices} />
       </div>
     </div>
   </Layout>
+);
+
+const ChoosePlanLink = () => (
+  <Link className="d-block" to="/billing/plans">
+    Choose plan
+  </Link>
+);
+
+const UpdatePaymentLink = () => (
+  <Link className="d-block" to="/billing/payment">
+    Update
+  </Link>
 );
 
 const mockInvoices = [
