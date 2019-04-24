@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import Alert from '../alert';
-import AuthLayout from '../layouts/auth';
+import Layout from '../../layouts/auth';
 
 const LogIn = ({ errors, onSubmit }) => (
-  <AuthLayout>
+  <Layout>
     <Formik initialValues={{ email: '', password: '' }} onSubmit={onSubmit}>
       {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
         <form onSubmit={handleSubmit} className="mt-3">
@@ -46,7 +46,7 @@ const LogIn = ({ errors, onSubmit }) => (
         </form>
       )}
     </Formik>
-  </AuthLayout>
+  </Layout>
 );
 
 export default LogIn;

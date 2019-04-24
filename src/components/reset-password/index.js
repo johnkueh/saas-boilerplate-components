@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../layouts/auth';
+import Layout from '../../layouts/auth';
 
 const ResetPassword = props => (
   <Layout>

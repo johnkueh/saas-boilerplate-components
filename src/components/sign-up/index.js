@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import Alert from '../alert';
-import Layout from '../layouts/auth';
+import Layout from '../../layouts/auth';
 
 const SignUp = ({ errors, onSubmit }) => (
   <Layout>

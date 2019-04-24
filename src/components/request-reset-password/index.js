@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Layout from '../layouts/auth';
+import Layout from '../../layouts/auth';
 
 const RequestResetPassword = props => (
   <Layout>
