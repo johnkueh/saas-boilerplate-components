@@ -1,27 +1,33 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { PropTypes } from 'prop-types';
 
 const ChoosePlan = ({ history }) => (
   <>
     <div className="my-3">
       {mockPlans.map(plan => (
-        <Form.Check key={plan.id} className="mb-2" type="radio" id={plan.id}>
+        <div key={plan.id} className="form-check mb-2">
           <div className="d-flex">
             <div className="mr-2">
-              <Form.Check.Input name="plan" type="radio" />
+              <input
+                id={plan.id}
+                type="radio"
+                className="form-check-input"
+                name="plan"
+                type="radio"
+              />
             </div>
             <div>
-              <Form.Check.Label htmlFor={plan.id}>
+              <label htmlFor={plan.id}>
                 <div className="font-weight-bold">
                   {plan.title} - {plan.price}/month
                 </div>
                 <div className="text-muted">{plan.caption}</div>
-              </Form.Check.Label>
+              </label>
             </div>
           </div>
-        </Form.Check>
+        </div>
       ))}
     </div>
     <div className="mt-4">
