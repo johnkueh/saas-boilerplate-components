@@ -1,26 +1,34 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import Heading from '../layouts/sections/heading';
+import Container from '../layouts/sections/container';
+import Layout from '../layouts/with-side-nav';
 import PaymentHistory from '../components/billing/payment-history';
 import ChoosePlan from '../components/billing/choose-plan';
 import AddCreditCard from '../components/billing/add-credit-card';
-import Layout from '../layouts/with-side-nav';
 
 const Account = () => (
   <Layout title="Billing">
     <div className="row">
       <div className="col-md-6">
-        <h5 className="pt-2 pb-2">Subscription plan</h5>
-        <Switch>
-          <Route path="/billing/plans" component={UpdatePlan} />
-          <Route component={Plan} />
-        </Switch>
-        <h5 className="pt-4 pb-2">Payment method</h5>
-        <Switch>
-          <Route path="/billing/payment" component={UpdatePayment} />
-          <Route component={Payment} />
-        </Switch>
-        <h5 className="pt-4 pb-2">Payment history</h5>
-        <PaymentHistory invoices={mockInvoices} />
+        <Container>
+          <Heading>Subscription plan</Heading>
+          <Switch>
+            <Route path="/billing/plans" component={UpdatePlan} />
+            <Route component={Plan} />
+          </Switch>
+        </Container>
+        <Container>
+          <Heading>Payment method</Heading>
+          <Switch>
+            <Route path="/billing/payment" component={UpdatePayment} />
+            <Route component={Payment} />
+          </Switch>
+        </Container>
+        <Container>
+          <Heading>Payment history</Heading>
+          <PaymentHistory invoices={mockInvoices} />
+        </Container>
       </div>
     </div>
   </Layout>
