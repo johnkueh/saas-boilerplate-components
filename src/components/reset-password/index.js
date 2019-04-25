@@ -1,8 +1,8 @@
 import React from 'react';
-import AuthLayout from '../layouts/auth';
+import Layout from '../../layouts/auth';
 
 const ResetPassword = props => (
-  <AuthLayout>
+  <Layout>
     <form className="mt-3">
       <label className="mb-3">Set a new password for your account</label>
       <input autoFocus className="form-control mb-3" type="password" placeholder="New password" />
@@ -13,7 +13,7 @@ const ResetPassword = props => (
         </button>
       </div>
     </form>
-  </AuthLayout>
+  </Layout>
 );
 
 export default ResetPassword;

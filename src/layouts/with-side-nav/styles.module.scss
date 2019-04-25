@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stage {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: scroll;
+}

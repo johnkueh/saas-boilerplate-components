@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SettingsLayout from '../../components/layouts/settings';
 import LogIn from './index';
 
-const stories = storiesOf('Components|User/LogIn', module);
+const stories = storiesOf('Components|log-in', module);
 
 const onSubmit = (values, { setSubmitting }) => {
   setTimeout(() => {
@@ -12,17 +11,11 @@ const onSubmit = (values, { setSubmitting }) => {
   }, 400);
 };
 
-stories.add('default', () => (
-  <SettingsLayout>
-    <LogIn onSubmit={onSubmit} />
-  </SettingsLayout>
-));
+stories.add('default', () => <LogIn onSubmit={onSubmit} />);
 
 stories.add('with Errors', () => (
-  <SettingsLayout>
-    <LogIn
-      onSubmit={onSubmit}
-      errors={[{ message: 'Please check your credentials and try again.' }]}
-    />
-  </SettingsLayout>
+  <LogIn
+    onSubmit={onSubmit}
+    errors={[{ message: 'Please check your credentials and try again.' }]}
+  />
 ));
