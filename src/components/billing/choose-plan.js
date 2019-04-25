@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { PropTypes } from 'prop-types';
 import { Formik, Field } from 'formik';
+import Dinero from 'dinero.js';
 
 const ChoosePlan = ({ plans, initialValue, onSubmit, onCancel }) => {
   return (
@@ -10,25 +11,25 @@ const ChoosePlan = ({ plans, initialValue, onSubmit, onCancel }) => {
       {({ values, handleSubmit, isSubmitting }) => (
         <form onSubmit={handleSubmit}>
           <div className="my-3">
-            {plans.map(plan => (
-              <div key={plan.id} className="form-check mb-2">
+            {plans.map(({ id, title, description, interval, amount, currency }) => (
+              <div key={id} className="form-check mb-2">
                 <div className="d-flex">
                   <div className="mr-2">
                     <Field
                       name="id"
                       type="radio"
-                      id={plan.id}
-                      value={plan.id}
-                      checked={plan.id === values.id}
+                      id={id}
+                      value={id}
+                      checked={id === values.id}
                       className="form-check-input"
                     />
                   </div>
                   <div>
-                    <label htmlFor={plan.id}>
+                    <label htmlFor={id}>
                       <div className="font-weight-bold">
-                        {plan.title} - {plan.price}/month
+                        {title} - {Dinero({ amount, currency }).toFormat('$0,0')}/{interval}
                       </div>
-                      <div className="text-muted">{plan.caption}</div>
+                      <div className="text-muted">{description}</div>
                     </label>
                   </div>
                 </div>

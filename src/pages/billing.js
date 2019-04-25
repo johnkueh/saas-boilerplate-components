@@ -35,7 +35,7 @@ const Account = () => (
 
 const Plan = props => (
   <>
-    <div className="mb-2">Developer - $30/month</div>
+    <div className="mb-2">Freelancer - $30/month</div>
     <Link className="d-block" to="/billing/plans">
       Choose plan
     </Link>
@@ -45,7 +45,7 @@ const Plan = props => (
 const UpdatePlan = ({ history }) => (
   <ChoosePlan
     plans={mockPlans}
-    initialValue="basic"
+    initialValue="plan_EwhcP2qanL2la9"
     onSubmit={(values, { setSubmitting }) => {
       console.log('UpdatePlan', values);
       history.push('/billing');
@@ -108,14 +108,30 @@ const mockInvoices = [
 ];
 
 const mockPlans = [
-  { id: 'basic', price: '$0', title: 'Basic', caption: '1 project, 500 API calls per day' },
   {
-    id: 'developer',
-    price: '$30',
-    title: 'Developer',
-    caption: '3 projects, unlimited API calls'
+    id: 'plan_EwhdWAyl20lY3r',
+    title: 'Agency',
+    description: '10 projects, unlimited API calls',
+    interval: 'month',
+    amount: 6000,
+    currency: 'usd'
   },
-  { id: 'agency', price: '$60', title: 'Agency', caption: '10 projects, unlimited API calls' }
+  {
+    id: 'plan_EwhcP2qanL2la9',
+    title: 'Freelancer',
+    description: '3 projects, unlimited API calls',
+    interval: 'month',
+    amount: 3000,
+    currency: 'usd'
+  },
+  {
+    id: 'plan_EwhcFkDkq3Wfzr',
+    title: 'Free',
+    description: '1 project, 500 API calls per day',
+    interval: 'month',
+    amount: 0,
+    currency: 'usd'
+  }
 ];
 
 export default Account;
