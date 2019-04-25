@@ -65,7 +65,17 @@ const Payment = props => (
   </>
 );
 
-const UpdatePayment = props => <AddCreditCard />;
+const UpdatePayment = ({ history }) => (
+  <AddCreditCard
+    onTokenized={token => {
+      console.log('AddCreditCard', token);
+      history.push('/billing');
+    }}
+    onCancel={() => {
+      history.push('/billing');
+    }}
+  />
+);
 
 const mockInvoices = [
   {
