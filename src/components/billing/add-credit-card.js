@@ -28,7 +28,7 @@ const AddCreditCard = ({ onTokenized, onCancel }) => (
 const PaymentForm = injectStripe(({ onTokenized, stripe }) => {
   const [loading, setLoading] = useState(false);
   return (
-    <div>
+    <>
       <CardElement style={{ base: { fontFamily: 'system-ui', fontSize: '15px' } }} hidePostalCode />
       <Button
         disabled={loading}
@@ -43,7 +43,7 @@ const PaymentForm = injectStripe(({ onTokenized, stripe }) => {
       >
         {loading ? 'Loading...' : 'Submit'}
       </Button>
-    </div>
+    </>
   );
 });
 
