@@ -1,12 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Layout from '../../components/layouts/settings';
 import ResetPassword from './index';
 
-const stories = storiesOf('Components|User/ResetPassword', module);
+const stories = storiesOf('Components|reset-password', module);
 
-stories.add('Default', () => (
-  <Layout>
-    <ResetPassword />
-  </Layout>
-));
+stories.add('Default', () => <ResetPassword />);
