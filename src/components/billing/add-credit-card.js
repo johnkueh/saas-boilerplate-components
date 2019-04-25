@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Elements, StripeProvider, CardElement, injectStripe } from 'react-stripe-elements';
 
 const AddCreditCard = ({ onTokenized, onCancel }) => (
-  <>
+  <div>
     <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}>
       <Elements>
         <div className="mt-3 mb-2">
@@ -22,13 +22,13 @@ const AddCreditCard = ({ onTokenized, onCancel }) => (
     <Button className="pl-0 mr-2" variant="link" onClick={onCancel}>
       Cancel
     </Button>
-  </>
+  </div>
 );
 
 const PaymentForm = injectStripe(({ onTokenized, stripe }) => {
   const [loading, setLoading] = useState(false);
   return (
-    <>
+    <div>
       <CardElement style={{ base: { fontFamily: 'system-ui', fontSize: '15px' } }} hidePostalCode />
       <Button
         disabled={loading}
@@ -43,7 +43,7 @@ const PaymentForm = injectStripe(({ onTokenized, stripe }) => {
       >
         {loading ? 'Loading...' : 'Submit'}
       </Button>
-    </>
+    </div>
   );
 });
 

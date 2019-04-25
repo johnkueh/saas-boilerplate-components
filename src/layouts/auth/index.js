@@ -9,7 +9,7 @@ const AuthLayout = ({ children }) => (
         <div className="card border-0 p-4 bg-light">
           <div className="my-3 text-center">
             <Link to="/">
-              <img alt="logo" height="40" src="full-logo-black.svg" />
+              <img alt="logo" height="40" src="/full-logo-black.svg" />
             </Link>
           </div>
           {children}
