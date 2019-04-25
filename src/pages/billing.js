@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import PaymentHistory from '../components/billing/payment-history';
 import ChoosePlan from '../components/billing/choose-plan';
-import UpdatePayment from '../components/billing/update-payment';
+import AddCreditCard from '../components/billing/add-credit-card';
 import Layout from '../layouts/with-side-nav';
 
 const Account = () => (
@@ -10,15 +10,14 @@ const Account = () => (
     <div className="row">
       <div className="col-md-6">
         <h5 className="pt-2 pb-2">Subscription plan</h5>
-        <div className="mb-2">Developer - $30/month</div>
         <Switch>
-          <Route path="/billing/plans" component={ChoosePlan} />
-          <Route component={ChoosePlanLink} />
+          <Route path="/billing/plans" component={UpdatePlan} />
+          <Route component={Plan} />
         </Switch>
         <h5 className="pt-4 pb-2">Payment method</h5>
         <Switch>
           <Route path="/billing/payment" component={UpdatePayment} />
-          <Route component={PaymentMethod} />
+          <Route component={Payment} />
         </Switch>
         <h5 className="pt-4 pb-2">Payment history</h5>
         <PaymentHistory invoices={mockInvoices} />
@@ -27,13 +26,30 @@ const Account = () => (
   </Layout>
 );
 
-const ChoosePlanLink = () => (
-  <Link className="d-block" to="/billing/plans">
-    Choose plan
-  </Link>
+const Plan = props => (
+  <>
+    <div className="mb-2">Developer - $30/month</div>
+    <Link className="d-block" to="/billing/plans">
+      Choose plan
+    </Link>
+  </>
 );
 
-const PaymentMethod = () => (
+const UpdatePlan = ({ history }) => (
+  <ChoosePlan
+    plans={mockPlans}
+    initialValue="basic"
+    onSubmit={(values, { setSubmitting }) => {
+      console.log('UpdatePlan', values);
+      history.push('/billing');
+    }}
+    onCancel={() => {
+      history.push('/billing');
+    }}
+  />
+);
+
+const Payment = props => (
   <>
     <div className="mb-2">XXXX-XXXX-XXXX-3234</div>
     <Link className="d-block" to="/billing/payment">
@@ -41,6 +57,8 @@ const PaymentMethod = () => (
     </Link>
   </>
 );
+
+const UpdatePayment = props => <AddCreditCard />;
 
 const mockInvoices = [
   {
@@ -70,6 +88,17 @@ const mockInvoices = [
     periodStart: '01-07-2019',
     periodEnd: '01-08-2019'
   }
+];
+
+const mockPlans = [
+  { id: 'basic', price: '$0', title: 'Basic', caption: '1 project, 500 API calls per day' },
+  {
+    id: 'developer',
+    price: '$30',
+    title: 'Developer',
+    caption: '3 projects, unlimited API calls'
+  },
+  { id: 'agency', price: '$60', title: 'Agency', caption: '10 projects, unlimited API calls' }
 ];
 
 export default Account;
